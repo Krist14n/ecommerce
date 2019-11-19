@@ -104,7 +104,7 @@ public class UserControllerTest {
         ResponseEntity<User> response = userController.createUser(userRequest);
 
         assertNotNull(response);
-        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
     }
 
     @Test
@@ -117,6 +117,6 @@ public class UserControllerTest {
         ResponseEntity<User> response = userController.createUser(userRequest);
 
         assertNotNull(response);
-        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
     }
 }
