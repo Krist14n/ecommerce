@@ -46,13 +46,13 @@ public class UserController {
 
 		if(!createUserRequest.getPassword().contentEquals(createUserRequest.getConfirmPassword())){
 			log.info("ECOMMERCE - Create_user_fail - Confirm password does not match password");
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
 
 		int passLength = createUserRequest.getPassword().length();
 		if(passLength< 7){
 			log.info("ECOMMERCE - Create_user_fail - Password length is {} smaller than 7 characters", passLength);
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
 
 		User user = new User();
